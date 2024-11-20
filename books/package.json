@@ -4,7 +4,7 @@
   "main": "books.js",
   "type":"module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon books.js"
   },
   "author": "",
   "license": "ISC",
