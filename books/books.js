@@ -73,6 +73,24 @@ app.get('/books/:id', (req, res) => {
 
 
 
+app.delete('/books/:id', (req, res) => {
+    Book.findByIdAndDelete(req.params.id)
+       .then((book) => {
+        res.send("book removed successfully")
+            if (!book) {
+                return res.status(404).json({ message: "Book not found" });
+            }
+            res.json(book);
+        })
+       .catch((err) => {
+            if (err) {
+                throw err;
+            }
+        });
+})
+
+
+
 
 app.listen(3000, () => {
   console.log("Server is running  ! -- This is our Book service!");
