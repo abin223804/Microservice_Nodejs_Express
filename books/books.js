@@ -11,7 +11,7 @@ mongoose
     "mongodb+srv://abinschandran:XPeTs1spqwqxQ2iG@cluster0.xpc7j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
-    console.log("Connected to MongoDB!");
+    console.log("Connected to MongoDB! - Book service");
   });
 app.get("/", (req, res) => {
   res.send("This is the books service");

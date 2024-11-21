@@ -15,7 +15,7 @@ mongoose
     "mongodb+srv://abinschandran:Ak0ZGm3kfaUROm2v@cluster0.m4ngc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => {
-    console.log("Connected to MongoDB!");
+    console.log("Connected to MongoDB! - customer");
   });
 
 
