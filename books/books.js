@@ -17,9 +17,24 @@ res.send("This is the books service")
 
 app.post('/books', (req, res) => {
 
-    //create a book
-console.log(req.body);
+    const newBook ={
+        title: req.body.title,
+        author: req.body.author,
+        numberPages: req.body.numberPages,
+        publisher: req.body.publisher,
+    }
+  const book = new Book(newBook);
 
+  book.save().then(()=>{
+
+    res.json(book);
+    console.log("New book created successfully");
+    
+  }).catch((err)=>{
+    if(err){
+        throw err;
+    }
+  })
 
 })
 app.listen(3000,()=>{
