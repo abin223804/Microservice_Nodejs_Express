@@ -43,7 +43,7 @@ app.get("/books",(req, res) => {
 
     Book.find()
        .then((books) => {
-        console.log(books);
+        // console.log(books);
         
             res.json(books);
         })
@@ -56,6 +56,20 @@ app.get("/books",(req, res) => {
 })
 
 
+app.get('/books/:id', (req, res) => {
+    Book.findById(req.params.id)
+       .then((book) => {
+            if (!book) {
+                return res.status(404).json({ message: "Book not found" });
+            }
+            res.json(book);
+        })
+       .catch((err) => {
+            if (err) {
+                throw err;
+            }
+        });
+})
 
 
 
