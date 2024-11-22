@@ -21,4 +21,4 @@ const orderSchema = new Schema({
   },
 });
 
-export default mongoose.model("Book", orderSchema);
+export default mongoose.model("Order", orderSchema);
